@@ -24,22 +24,22 @@ const workExperience = [
   },
 ];
 
-const additionalExperience = [
-  {
-    id: 1,
-    name: "TourGuru",
-    image: "./assets/netflix2.png",
-  },
-  {
-    id: 1,
-    name: "TourGuru",
-    image: "./assets/netflix2.png",
-  },
-];
+// const additionalExperience = [
+//   {
+//     id: 1,
+//     name: "TourGuru",
+//     image: "./assets/netflix2.png",
+//   },
+//   {
+//     id: 1,
+//     name: "TourGuru",
+//     image: "./assets/netflix2.png",
+//   },
+// ];
 
 const ProofWorkInternal = () => {
   const containerRef1 = useRef(null);
-  const containerRef2 = useRef(null);
+  // const containerRef2 = useRef(null);
 
   const variants1 = {
     animate: {
@@ -55,19 +55,19 @@ const ProofWorkInternal = () => {
     },
   };
 
-  const variants2 = {
-    animate: {
-      x: ["calc(-50% - 1rem)", 0],
-      transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 20,
-          ease: "linear",
-        },
-      },
-    },
-  };
+  // const variants2 = {
+  //   animate: {
+  //     x: ["calc(-50% - 1rem)", 0],
+  //     transition: {
+  //       x: {
+  //         repeat: Infinity,
+  //         repeatType: "loop",
+  //         duration: 20,
+  //         ease: "linear",
+  //       },
+  //     },
+  //   },
+  // };
 
   return (
     <div className="tw-flex tw-flex-col tw-items-center tw-justify-start tw-h-full tw-p-0">
