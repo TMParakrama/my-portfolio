@@ -1,25 +1,74 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useOnWindow, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { BentoBox } from "~/components/ui/bento-box";
 
 export default component$(() => {
+  const isLoaded = useSignal(false);
+
+  useOnWindow(
+    "readystatechange",
+    $(() => {
+      isLoaded.value = true;
+    })
+  );
+
   return (
     <>
-      <h1>Hi 👋</h1>
-      <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </div>
+      {!isLoaded.value ? (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <div
+            style={{
+              width: "64px",
+              height: "64px",
+              border: "2px solid #fff",
+              borderTopColor: "transparent",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          />
+          <div
+            style={{
+              color: "#fff",
+              fontSize: "1.2rem",
+            }}
+          >
+            Loading<span style={{ animation: "dots 1.5s infinite" }}>...</span>
+          </div>
+          <style>{`
+            @keyframes spin {
+              to {
+                transform: rotate(360deg);
+              }
+            }
+            @keyframes dots {
+              0% { opacity: 0.2; }
+              20% { opacity: 1; }
+              100% { opacity: 0.2; }
+            }
+          `}</style>
+        </div>
+      ) : (
+        <BentoBox />
+      )}
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Portfolio",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "This is the portfolio site developed with Qwik.",
     },
   ],
 };

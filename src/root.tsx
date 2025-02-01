@@ -29,9 +29,11 @@ export default component$(() => {
         )}
         <RouterHead />
       </head>
-      <body lang="en">
-        <RouterOutlet />
-        {!isDev && <ServiceWorkerRegister />}
+      <body lang="en" class="tw-m-0">
+        <div class="tw-sm:px-4 tw-lg:px-12 tw-px-4 tw-py-4 tw-bg-black tw-h-full">
+          <RouterOutlet />
+          {!isDev && <ServiceWorkerRegister />}
+        </div>
       </body>
     </QwikCityProvider>
   );
