@@ -50,7 +50,7 @@ export const TableApp = qwikify$(() => {
           rows={rows}
           columns={columns}
           autoPageSize
-          checkboxSelection
+          checkboxSelection //check props
         />
       </div>
     </>
