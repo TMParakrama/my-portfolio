@@ -9,18 +9,40 @@ import { motion } from "framer-motion";
 const workExperience = [
   {
     id: 1,
-    name: "Souffle",
-    image: "./assets/netflix2.png",
+    name: "Portfolio",
+    urls: [{ url: "https://", appName: "My Portfolio", repoUrl: "https://" }],
   },
   {
     id: 2,
-    name: "IPass",
-    image: "./assets/netflix2.png",
+    name: "Souffle",
+    urls: [
+      {
+        url: "https://app.souffle.com.au",
+        appName: "Souffle - Financial Modeler App",
+      },
+      {
+        url: "https://my.souffle.com.au",
+        appName: "Souffle - Client App",
+      },
+      {
+        url: "https://onboarding.souflle.com.au",
+        appName: "Souffle - Lead's Pre-Meeting Form",
+      },
+    ],
   },
   {
     id: 3,
-    name: "TourGuru",
-    image: "./assets/netflix2.png",
+    name: "IPass",
+    urls: [
+      {
+        url: "https//",
+        appName: "IPass - Institute Management App",
+      },
+      {
+        url: "https://",
+        appName: "IPass - Client App",
+      },
+    ],
   },
 ];
 
@@ -28,12 +50,10 @@ const workExperience = [
 //   {
 //     id: 1,
 //     name: "TourGuru",
-//     image: "./assets/netflix2.png",
 //   },
 //   {
 //     id: 1,
 //     name: "TourGuru",
-//     image: "./assets/netflix2.png",
 //   },
 // ];
 

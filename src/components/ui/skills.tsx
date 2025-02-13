@@ -122,7 +122,7 @@ const SkillsInternal = () => {
           ref={containerRef}
           animate={controls}
           style={{ width: "100%", display: "flex", flexDirection: "column" }}
-          className="tw-flex tw-flex-col tw-items-center tw-gap-4"
+          className="tw-flex tw-flex-col tw-items-center tw-gap-4 tw-justify-center tw-min-w-full"
         >
           {rectangles
             .concat(rectangles)
@@ -131,9 +131,9 @@ const SkillsInternal = () => {
               <motion.div
                 key={index}
                 style={{
-                  width: "calc(100% - 38px)",
+                  width: "calc(100% - 64px)",
                 }}
-                className="tw-mw-full tw-flex-1 tw-bg-[#1a1c1e] tw-border tw-border-gray-700 tw-rounded-xl tw-py-3 tw-px-4 tw-mx-3 tw-flex-shrink-0"
+                className="tw-flex-1 tw-bg-[#1a1c1e] tw-border tw-border-gray-700 tw-rounded-xl tw-py-3 tw-px-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onHoverStart={handleHoverStart}
