@@ -10,7 +10,7 @@ const workExperience = [
   {
     id: 1,
     name: "Portfolio",
-    urls: [{ url: "https://", appName: "My Portfolio", repoUrl: "https://" }],
+    urls: [{ url: "https://portfolio-parakrama.netlify.app/", appName: "My Portfolio", repoUrl: "https://github.com/TMParakrama/my-portfolio" }],
   },
   {
     id: 2,
