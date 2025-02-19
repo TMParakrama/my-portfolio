@@ -9,7 +9,6 @@ import { TickerBox } from "./number-ticker";
 import { TechLogoStack } from "./tech-logo-stack";
 import { ProfileBox } from "./profile-box";
 import { Projects } from "./projects";
-import ProfileImage from "../../media/assets/images/my-profile-image.png?w=80&h=104&jsx";
 import { TechStack } from "./tech-stack";
 import { Testimonials } from "./testimonials";
 import { Collaborate } from "./collaborate";
@@ -61,7 +60,8 @@ export const BentoBox = component$(() => {
                 onContextMenu$={preventContextMenu}
                 style={{ userSelect: "none", WebkitUserSelect: "none" }}
               >
-                <ProfileImage
+                <img
+                  src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-112 tw-brightness-108 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
                 />
@@ -117,7 +117,8 @@ export const BentoBox = component$(() => {
                 onContextMenu$={preventContextMenu}
                 style={{ userSelect: "none", WebkitUserSelect: "none" }}
               >
-                <ProfileImage
+                <img
+                  src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-128 tw-brightness-110 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
                 />
