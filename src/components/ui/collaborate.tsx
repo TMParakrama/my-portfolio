@@ -3,8 +3,8 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 
 import { motion } from "framer-motion";
+import { FaLinkedin, } from "react-icons/fa";
 import {
-  HiPhone,
   HiChatBubbleOvalLeftEllipsis,
   HiSparkles,
 } from "react-icons/hi2";
@@ -73,7 +73,7 @@ const CollaborateInternal = () => {
           style={{ transformOrigin: "left" }}
         />
         <span className="tw-relative tw-z-10 tw-flex tw-items-center">
-          <HiPhone className="tw-w-5 tw-h-5 tw-mr-2 tw-text-purple-600" />
+          <FaLinkedin className="tw-w-5 tw-h-5 tw-mr-2 tw-text-purple-600" />
           Find me on LinkedIn
         </span>
       </motion.button>
