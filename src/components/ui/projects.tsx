@@ -61,7 +61,7 @@ const rectangles = [
     id: 6,
     title: "TourGuru - Research and Mobile App",
     icon: <HiShieldCheck className="tw-h-6 tw-w-6 tw-text-white" />,
-    description: "",
+    description: "Research paper published research project focused on eSociety topic",
     sourceCode: "",
     liveLink: "https://ieeexplore.ieee.org/document/9103380",
   },
@@ -69,9 +69,9 @@ const rectangles = [
     id: 7,
     title: "Portfolio",
     icon: <HiShieldCheck className="tw-h-6 tw-w-6 tw-text-white" />,
-    description: "",
-    sourceCode: "",
-    liveLink: "",
+    description: "Portfolio page built with Qwik and deployed on Netlify",
+    sourceCode: "https://github.com/TMParakrama/my-portfolio",
+    liveLink: "https://portfolio-parakrama.netlify.app/",
   },
 ];
 

@@ -54,9 +54,14 @@ const additionalExperience = [
   },
   {
     id: 2,
-    name: "TourGuru",
-    urls: [{ url: "", appName: "TourGuru - Travel App", repoUrl: "" }],
+    name: "Kredible",
+    urls: [{ url: "", appName: "Kredible - Micro Finance Insitute management app", repoUrl: "" }],
   },
+  {
+    id: 3,
+    name: "eDoc",
+    urls: [{ url: "", appName: "eDoc - Doctor Consultation and Patient management mobile app", repoUrl: "" }],
+  }
 ];
 
 interface AppURLType {
