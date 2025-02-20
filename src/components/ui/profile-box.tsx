@@ -16,6 +16,7 @@ import { RiSpeakFill, RiWhatsappFill, RiMailSendFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 
 import FlipTextAnimation from "./flip-text";
+import ShinyText from "./shiny-text/shiny-text";
 // import downloadAnimationData from "../../media/assets/animations/lotties/download.json";
 // import messageAnimationData from "~/media/assets/animations/lotties/message.json";
 // import emailAnimationData from "~/media/assets/animations/lotties/email.json";
@@ -130,7 +131,7 @@ const ProfileBoxInternal = () => {
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
                 transition={{
-                  duration: 2,
+                  duration: 5,
                   ease: "linear",
                   repeat: Infinity,
                   repeatType: "loop",
@@ -138,7 +139,11 @@ const ProfileBoxInternal = () => {
               />
             </div>
             <span className="tw-text-white tw-text-lg">
-              Parakrama Thennakoon
+              <ShinyText
+                text="Parakrama Thennakoon"
+                disabled={false}
+                speed={5}
+              />
             </span>
             <div className="tw-flex tw-flex-1 tw-gap-2 tw-justify-center tw-items-center">
               <span className="tw-flex tw-text-white tw-text-sm tw-mt-2">

@@ -43,18 +43,6 @@ export default component$(() => {
           >
             Loading<span style={{ animation: "dots 1.5s infinite" }}>...</span>
           </div>
-          <style>{`
-            @keyframes spin {
-              to {
-                transform: rotate(360deg);
-              }
-            }
-            @keyframes dots {
-              0% { opacity: 0.2; }
-              20% { opacity: 1; }
-              100% { opacity: 0.2; }
-            }
-          `}</style>
         </div>
       ) : (
         <BentoBox />

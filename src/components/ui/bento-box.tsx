@@ -56,11 +56,13 @@ export const BentoBox = component$(() => {
           <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-w-full tw-h-full tw-max-w-screen-2xl sm:tw-grid-cols-4 md:tw-grid-cols-3 xl:tw-grid-cols-6">
             <div class="tw-bg-[#121416] tw-rounded-xl tw-col-span-2 sm:tw-col-span-full tw-flex tw-flex-col sm:tw-flex-row tw-pl-6">
               <div
-                class="tw-flex tw-w-[32] tw-h-[40] tw-items-center tw-justify-center tw-rounded-full"
+                class="tw-flex tw-w-[32] tw-h-[40] tw-items-center tw-justify-center tw-rounded-full tw-select-none "
                 onContextMenu$={preventContextMenu}
-                style={{ userSelect: "none", WebkitUserSelect: "none" }}
+                // style={{ userSelect: "none", WebkitUserSelect: "none" }}
               >
                 <img
+                  width={128}
+                  height={160}
                   src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-112 tw-brightness-108 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
@@ -113,11 +115,13 @@ export const BentoBox = component$(() => {
           <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-w-full tw-max-w-screen-2xl sm:tw-grid-cols-4 md:tw-grid-cols-4 xl:tw-grid-cols-6">
             <div class="tw-bg-[#121416] tw-rounded-xl tw-col-span-2 sm:tw-col-span-full tw-flex tw-flex-col sm:tw-flex-row tw-pl-6">
               <div
-                class="tw-flex tw-items-center tw-justify-center tw-rounded-full tw-mb-1 tw-w-32 tw-h-40"
+                class="tw-flex tw-items-center tw-justify-center tw-rounded-full tw-mb-1 tw-w-32 tw-h-40 tw-select-none"
                 onContextMenu$={preventContextMenu}
-                style={{ userSelect: "none", WebkitUserSelect: "none" }}
+                // style={{ userSelect: "none", WebkitUserSelect: "none" }}
               >
                 <img
+                  width={128}
+                  height={160}
                   src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-128 tw-brightness-110 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
