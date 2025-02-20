@@ -51,7 +51,7 @@ export const BentoBox = component$(() => {
 
   return (
     <>
-      <div class="tw-flex tw-justify-center tw-p-0 sm:tw-p-4">
+      <div class="tw-flex tw-justify-center tw-p-0  ">
         {isExtraLargeScreen.value ? (
           <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-w-full tw-h-full tw-max-w-screen-2xl sm:tw-grid-cols-4 md:tw-grid-cols-3 xl:tw-grid-cols-6">
             <div class="tw-bg-[#121416] tw-rounded-xl tw-col-span-2 sm:tw-col-span-full tw-flex tw-flex-col sm:tw-flex-row tw-pl-6">

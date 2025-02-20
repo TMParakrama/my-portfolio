@@ -44,7 +44,7 @@ export default component$(() => {
           ]}
           speed={0.25}
         />
-        <div class="tw-sm:px-4 tw-lg:px-12 tw-px-4 tw-py-4  tw-h-full tw-z-20">
+        <div class="tw-px-4 tw-py-4  tw-h-full tw-z-20">
           <RouterOutlet />
           {!isDev && <ServiceWorkerRegister />}
         </div>
