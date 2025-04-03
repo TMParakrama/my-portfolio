@@ -28,6 +28,7 @@ export default component$(() => {
             href={`${import.meta.env.BASE_URL}manifest.json`}
           />
         )}
+        {/*<link rel="preload" as="image" href="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv" />*/}
         <RouterHead />
       </head>
       <body lang="en" class="tw-m-0 tw-bg-black">
