@@ -11,6 +11,7 @@ const workExperience = [
     id: 1,
     name: "Portfolio",
     urls: [{ url: "https://portfolio-parakrama.netlify.app/", appName: "My Portfolio", repoUrl: "https://github.com/TMParakrama/my-portfolio" }],
+    docPage: 'protfolio'
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const workExperience = [
         appName: "Souffle - Lead's Pre-Meeting Form",
       },
     ],
+    docPage: 'souffle'
   },
   {
     id: 3,
@@ -43,6 +45,7 @@ const workExperience = [
         appName: "IPass - Client App",
       },
     ],
+    docPage: 'IPass'
   },
 ];
 
@@ -51,16 +54,19 @@ const additionalExperience = [
     id: 1,
     name: "TourGuru",
     urls: [{ url: "", appName: "TourGuru - Travel App", repoUrl: "" }],
+    docPage: 'TourGuru'
   },
   {
     id: 2,
     name: "Kredible",
     urls: [{ url: "", appName: "Kredible - Micro Finance Insitute management app", repoUrl: "" }],
+    docPage: 'Kredible'
   },
   {
     id: 3,
     name: "eDoc",
     urls: [{ url: "", appName: "eDoc - Doctor Consultation and Patient management mobile app", repoUrl: "" }],
+    docPage: 'eDoc'
   }
 ];
 

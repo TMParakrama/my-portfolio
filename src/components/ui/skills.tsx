@@ -58,14 +58,13 @@ const SkillsInternal = () => {
   useEffect(() => {
     if (!isHovered) {
       controls.start({
-        y: [scrollPosition, scrollPosition - 100 + "%"],
+        y: [scrollPosition + "%", scrollPosition - 100 + "%"],
         transition: {
           y: {
             repeat: Infinity,
             repeatType: "loop",
             duration: 120,
             ease: "linear",
-            from: 0,
           },
         },
       });
@@ -77,11 +76,16 @@ const SkillsInternal = () => {
     controls.stop();
     if (containerRef.current) {
       const transform = window.getComputedStyle(containerRef.current).transform;
-      const currentY = transform.match(/translateY\(([^)]+)\)/);
-      if (currentY) {
-        const currentPosition = parseFloat(currentY[1]);
-        setScrollPosition(currentPosition);
-        controls.set({ y: currentPosition });
+      const matrixValues = transform.match(/matrix.*\((.*)\)/)?.[1].split(",");
+      if (matrixValues && matrixValues.length === 6) {
+        // Get Y translation value (last number in matrix)
+        const yTranslation = parseFloat(matrixValues[5]);
+        // Convert pixels to percentage based on container height
+        const containerHeight = containerRef.current.offsetHeight;
+        const percentage = (yTranslation / containerHeight) * 100;
+
+        setScrollPosition(percentage);
+        controls.set({ y: percentage + "%" });
       }
     }
   };
@@ -89,16 +93,19 @@ const SkillsInternal = () => {
   const handleHoverEnd = () => {
     if (containerRef.current) {
       const transform = window.getComputedStyle(containerRef.current).transform;
-      const currentY = transform.match(/translateY\(([^)]+)\)/);
-      if (currentY) {
-        const currentPosition = parseFloat(currentY[1]);
-        setScrollPosition(currentPosition);
-        controls.set({ y: currentPosition });
+      const matrixValues = transform.match(/matrix.*\((.*)\)/)?.[1].split(",");
+      if (matrixValues && matrixValues.length === 6) {
+        // Get Y translation value (last number in matrix)
+        const yTranslation = parseFloat(matrixValues[5]);
+        // Convert pixels to percentage based on container height
+        const containerHeight = containerRef.current.offsetHeight;
+        const percentage = (yTranslation / containerHeight) * 100;
+
+        setScrollPosition(percentage);
+        controls.set({ y: percentage + "%" });
       }
     }
-    setTimeout(() => {
-      setIsHovered(false);
-    }, 100);
+    setIsHovered(false);
   };
 
   return (

@@ -66,6 +66,8 @@ export const BentoBox = component$(() => {
                   src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-112 tw-brightness-108 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
+                  fetchPriority="high"
+                  alt=" "
                 />
               </div>
               <div class="tw-flex-1">
@@ -125,6 +127,8 @@ export const BentoBox = component$(() => {
                   src="https://drive.google.com/thumbnail?id=1eiLD5-QrPKYtdbpWUrcLVN2niPDVsGBv"
                   class="tw-rounded-full tw-filter tw-saturate-128 tw-brightness-110 tw-w-32 tw-h-40 tw-pointer-events-none"
                   draggable={false}
+                  fetchPriority="high"
+                  alt=" "
                 />
               </div>
               <div class="tw-flex-1">

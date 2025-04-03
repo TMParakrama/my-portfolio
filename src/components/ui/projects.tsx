@@ -2,7 +2,7 @@
 
 import { qwikify$ } from "@builder.io/qwik-react";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 import {
@@ -61,7 +61,8 @@ const rectangles = [
     id: 6,
     title: "TourGuru - Research and Mobile App",
     icon: <HiShieldCheck className="tw-h-6 tw-w-6 tw-text-white" />,
-    description: "Research paper published research project focused on eSociety topic",
+    description:
+      "Research paper published research project focused on eSociety topic",
     sourceCode: "",
     liveLink: "https://ieeexplore.ieee.org/document/9103380",
   },
@@ -93,33 +94,39 @@ const ProjectsInternal = () => {
   );
   const [isHovered, setIsHovered] = useState(false);
 
-  const startScrollAnimation = () => {
+  const startScrollAnimation = useCallback(() => {
     controls.start({
-      y: [scrollPosition, scrollPosition - 100 + "%"],
+      y: [scrollPosition + "%", scrollPosition - 100 + "%"], // Start from current position
       transition: {
         y: {
           repeat: Infinity,
           repeatType: "loop",
           duration: 120,
           ease: "linear",
-          from: 0,
         },
       },
     });
-  };
+  }, [scrollPosition, controls]);
 
-  const pauseScrollAnimation = () => {
+  const pauseScrollAnimation = useCallback(() => {
     controls.stop();
     if (containerRef.current) {
       const transform = window.getComputedStyle(containerRef.current).transform;
-      const currentY = transform.match(/translateY\(([^)]+)\)/);
-      if (currentY) {
-        const currentPosition = parseFloat(currentY[1]);
-        setScrollPosition(currentPosition);
-        controls.set({ y: currentPosition });
+
+      // Parse matrix values - matrix(1, 0, 0, 1, 0, Y)
+      const matrixValues = transform.match(/matrix.*\((.*)\)/)?.[1].split(",");
+      if (matrixValues && matrixValues.length === 6) {
+        // Get Y translation value (last number in matrix)
+        const yTranslation = parseFloat(matrixValues[5]);
+        // Convert pixels to percentage based on container height
+        const containerHeight = containerRef.current.offsetHeight;
+        const percentage = (yTranslation / containerHeight) * 100;
+
+        setScrollPosition(percentage);
+        controls.set({ y: percentage + "%" });
       }
     }
-  };
+  }, [controls]);
 
   useEffect(() => {
     if (!selectedProject && !isHovered) {
