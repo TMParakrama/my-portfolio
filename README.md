@@ -258,3 +258,19 @@ netlify deploy --build
 You must use the `--build` flag whenever you deploy. This ensures that the Edge Functions that this starter site relies on are generated and available when you deploy your site.
 
 Add `--prod` flag to deploy to production.
+
+## Commit Guidelines
+
+This project follows the [Conventional Commits][] specification.
+
+Commits must be signed. You can learn more about [Commit Signing][] here.
+
+### Commit Message Guidelines
+
+- Commit messages must include a "type" as described in Conventional Commits
+- Commit messages **must** start with a capital letter
+- Commit messages **must not** end with a period `.`
+- Commit messages **must** be in English _sorry for the constraint_
+
+[Conventional Commits]: https://www.conventionalcommits.org/
+[Commit Signing]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
