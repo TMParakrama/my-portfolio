@@ -265,6 +265,7 @@ This project follows the [Conventional Commits][] specification.
 
 Commits must be signed. You can learn more about [Commit Signing][] here.
 
+
 ### Commit Message Guidelines
 
 - Commit messages must include a "type" as described in Conventional Commits

@@ -10,8 +10,14 @@ const workExperience = [
   {
     id: 1,
     name: "Portfolio",
-    urls: [{ url: "https://portfolio-parakrama.netlify.app/", appName: "My Portfolio", repoUrl: "https://github.com/TMParakrama/my-portfolio" }],
-    docPage: 'protfolio'
+    urls: [
+      {
+        url: "https://portfolio-parakrama.netlify.app/",
+        appName: "My Portfolio",
+        repoUrl: "https://github.com/TMParakrama/my-portfolio",
+      },
+    ],
+    docPage: "Portfolio",
   },
   {
     id: 2,
@@ -30,7 +36,7 @@ const workExperience = [
         appName: "Souffle - Lead's Pre-Meeting Form",
       },
     ],
-    docPage: 'souffle'
+    docPage: "Souffle",
   },
   {
     id: 3,
@@ -45,7 +51,7 @@ const workExperience = [
         appName: "IPass - Client App",
       },
     ],
-    docPage: 'IPass'
+    docPage: "iPass",
   },
 ];
 
@@ -54,20 +60,32 @@ const additionalExperience = [
     id: 1,
     name: "TourGuru",
     urls: [{ url: "", appName: "TourGuru - Travel App", repoUrl: "" }],
-    docPage: 'TourGuru'
+    docPage: "TourGuru",
   },
   {
     id: 2,
     name: "Kredible",
-    urls: [{ url: "", appName: "Kredible - Micro Finance Insitute management app", repoUrl: "" }],
-    docPage: 'Kredible'
+    urls: [
+      {
+        url: "",
+        appName: "Kredible - Micro Finance Insitute management app",
+        repoUrl: "",
+      },
+    ],
+    docPage: "Kredible",
   },
   {
     id: 3,
     name: "eDoc",
-    urls: [{ url: "", appName: "eDoc - Doctor Consultation and Patient management mobile app", repoUrl: "" }],
-    docPage: 'eDoc'
-  }
+    urls: [
+      {
+        url: "",
+        appName: "eDoc - Doctor Consultation and Patient management mobile app",
+        repoUrl: "",
+      },
+    ],
+    docPage: "eDoc",
+  },
 ];
 
 interface AppURLType {
@@ -127,6 +145,16 @@ const ProofWorkInternal = () => {
 
   const isUrlClickable = (url: string | undefined) => url && url.length > 0;
 
+  /**
+   * Handles navigation to the documentation page for the selected project.
+   * @param docPage The docPage string to navigate to (e.g., 'Portfolio')
+   */
+  const handleNavigateToDoc = (docPage?: string) => {
+    if (docPage) {
+      window.location.href = `/docs/${docPage}`;
+    }
+  };
+
   return (
     <div className="tw-flex tw-flex-col tw-items-center tw-justify-start tw-h-full tw-p-0">
       <div className="tw-flex tw-items-center tw-mb-2 tw-mt-4">
@@ -163,7 +191,7 @@ const ProofWorkInternal = () => {
                 className="tw-w-36 tw-bg-[#1a1c1e] tw-border tw-border-gray-700 tw-rounded-xl tw-py-3 tw-px-0 tw-flex-shrink-0 tw-flex tw-items-center tw-justify-center tw-cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedProject(data)}
+                onClick={() => handleNavigateToDoc(data.docPage)}
               >
                 <div>
                   <h1 className="tw-font-medium tw-text-white">{data.name}</h1>
@@ -197,7 +225,7 @@ const ProofWorkInternal = () => {
                 className="tw-w-36 tw-bg-[#1a1c1e] tw-border tw-border-gray-700 tw-rounded-xl tw-py-3 tw-px-0 tw-flex-shrink-0 tw-flex tw-items-center tw-justify-center tw-cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedProject(data)}
+                onClick={() => handleNavigateToDoc(data.docPage)}
               >
                 <div>
                   <h1 className="tw-font-medium tw-text-white">{data.name}</h1>

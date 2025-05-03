@@ -52,9 +52,9 @@ const TestimonialsInternal = () => {
       <h2 className="tw-text-white tw-text-xl tw-mb-2 tw-text-center">
         Clients Word{" "}
       </h2>
-      <div className="tw-w-full tw-h-[1px] tw-bg-gray-600 tw-mb-4"></div>
+      <div className="tw-w-full tw-h-[1px] tw-bg-gray-600 tw-mb-2 tw-pb-2"></div>
       <div
-        className="tw-overflow-hidden tw-w-full tw-h-64  sm:tw-h-96 md:tw-h-64 xl:tw-h-52 tw-px-2"
+        className="tw-overflow-hidden tw-w-full tw-h-64  sm:tw-h-96 md:tw-h-60 xl:tw-h-52 tw-px-2"
         style={{
           maskImage:
             "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
