@@ -1,7 +1,6 @@
 import { component$, useSignal, useOnWindow, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { BentoBox } from "~/components/ui/bento-box";
-import { SpotifyPlayer } from "~/components/spotify-player";
 
 export default component$(() => {
   const isLoaded = useSignal(false);
@@ -46,10 +45,7 @@ export default component$(() => {
           </div>
         </div>
       ) : (
-        <>
-          <BentoBox />
-          <SpotifyPlayer />
-        </>
+        <BentoBox />
       )}
     </>
   );
