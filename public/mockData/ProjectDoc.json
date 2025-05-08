@@ -1,26 +1,63 @@
 {
   "iPass": {
     "title": "iPass - Comprehensive Fitness Center Management Solution",
-    "description": "A powerful dual-app ecosystem featuring a center management platform and client mobile app. Designed for fitness centers, sports facilities, and wellness studios, iPass streamlines operations with automated scheduling, membership management, payment processing, and attendance tracking. The client app enables members to book sessions, track progress, and engage with their fitness community seamlessly."
+    "description": "A powerful dual-app ecosystem featuring a center management platform and client mobile app. Designed for fitness centers, sports facilities, and wellness studios, iPass streamlines operations with automated scheduling, membership management, payment processing, and attendance tracking. The client app enables members to book sessions, track progress, and engage with their fitness community seamlessly.",
+    "links": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ],
+    "repoUrl": ""
   },
   "TourGuru": {
     "title": "TourGuru - Smart Travel Companion for Sri Lanka",
-    "description": "An innovative mobile application revolutionizing Sri Lanka's tourism experience. TourGuru provides personalized itineraries, real-time travel recommendations, cultural insights, and local expertise through an AI-powered platform. Features include interactive maps, offline guides, local business discovery, and community-driven travel tips."
+    "description": "An innovative mobile application revolutionizing Sri Lanka's tourism experience. TourGuru provides personalized itineraries, real-time travel recommendations, cultural insights, and local expertise through an AI-powered platform. Features include interactive maps, offline guides, local business discovery, and community-driven travel tips.",
+    "links": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ],
+    "repoUrl": ""
   },
   "Portfolio": {
     "title": "Modern Developer Portfolio",
-    "description": "A high-performance personal portfolio website built with Qwik framework, showcasing professional experience and technical expertise. Features include dynamic project documentation, interactive UI components, and responsive design. Deployed on Netlify with optimized loading and rendering capabilities."
+    "description": "A high-performance personal portfolio website built with Qwik framework, showcasing professional experience and technical expertise. Features include dynamic project documentation, interactive UI components, and responsive design. Deployed on Netlify with optimized loading and rendering capabilities.",
+    "links": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ],
+    "repoUrl": ""
   },
   "eDoc": {
     "title": "eDoc - Telemedicine & Healthcare Management Platform",
-    "description": "A comprehensive healthcare platform connecting patients with medical professionals. Features include secure video consultations, appointment scheduling, electronic health records, prescription management, and automated reminders. Designed to improve healthcare accessibility while streamlining practice management for healthcare providers."
+    "description": "A comprehensive healthcare platform connecting patients with medical professionals. Features include secure video consultations, appointment scheduling, electronic health records, prescription management, and automated reminders. Designed to improve healthcare accessibility while streamlining practice management for healthcare providers.",
+    "links": [],
+    "repoUrl": ""
   },
   "Souffle": {
     "title": "Souffle - Financial Advisory Ecosystem",
-    "description": "A sophisticated B2B2C platform revolutionizing financial advisory services. Souffle seamlessly integrates client relationship management, compliance workflows, and financial modeling tools. The platform enables advisors to deliver personalized financial strategies, automate regulatory requirements, and enhance client engagement through a unified digital experience."
+    "description": "A sophisticated B2B2C platform revolutionizing financial advisory services. Souffle seamlessly integrates client relationship management, compliance workflows, and financial modeling tools. The platform enables advisors to deliver personalized financial strategies, automate regulatory requirements, and enhance client engagement through a unified digital experience.",
+    "links": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ],
+    "repoUrl": ""
   },
   "Kredible": {
     "title": "Kredible - Microfinance Management Platform",
-    "description": "A comprehensive microfinance management platform designed for organizations following the Grameen model. The system facilitates the administration of collateral-free small loans for income-generating activities, streamlines borrower management, tracks loan disbursements and repayments, and provides analytics for better decision making. Features include borrower profiles, loan cycle tracking, collection management, and performance reporting."
+    "description": "A comprehensive microfinance management platform designed for organizations following the Grameen model. The system facilitates the administration of collateral-free small loans for income-generating activities, streamlines borrower management, tracks loan disbursements and repayments, and provides analytics for better decision making. Features include borrower profiles, loan cycle tracking, collection management, and performance reporting.",
+    "links": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ],
+    "repoUrl": ""
   }
 }
