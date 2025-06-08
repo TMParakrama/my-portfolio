@@ -130,7 +130,7 @@ const ProfileBoxInternal = () => {
               >
                 <circle cx={3} cy={3} r={3} />
               </svg>
-              Onlook for opportunities
+              Exploring and Seeking Emerging Opportunities
               <motion.div
                 className="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-gradient-to-r tw-from-transparent tw-via-white tw-to-transparent tw-opacity-30"
                 initial={{ x: "-100%" }}
