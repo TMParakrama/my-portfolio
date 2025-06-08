@@ -27,6 +27,9 @@ const testimonials = [
 const TestimonialsInternal = () => {
   const containerRef = useRef(null);
 
+  /**
+   * @description Variants for the animation
+   */
   const variants = {
     animate: {
       y: [0, "-100%"],

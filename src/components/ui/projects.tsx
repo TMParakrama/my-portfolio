@@ -94,6 +94,9 @@ const ProjectsInternal = () => {
   );
   const [isHovered, setIsHovered] = useState(false);
 
+  /**
+   * @description Start scroll animation
+   */
   const startScrollAnimation = useCallback(() => {
     controls.start({
       y: [scrollPosition + "%", scrollPosition - 100 + "%"], // Start from current position
@@ -108,6 +111,9 @@ const ProjectsInternal = () => {
     });
   }, [scrollPosition, controls]);
 
+  /**
+   * @description Pause scroll animation
+   */
   const pauseScrollAnimation = useCallback(() => {
     controls.stop();
     if (containerRef.current) {
@@ -128,6 +134,9 @@ const ProjectsInternal = () => {
     }
   }, [controls]);
 
+  /**
+   * @description Effect to start and pause scroll animation
+   */
   useEffect(() => {
     if (!selectedProject && !isHovered) {
       startScrollAnimation();
@@ -136,16 +145,31 @@ const ProjectsInternal = () => {
     }
   }, [controls, scrollPosition, selectedProject, isHovered]);
 
+  /**
+   * @function handleClose
+   * @returns {void}
+   * @description Handle close
+   */
   const handleClose = () => {
     setSelectedProject(null);
   };
 
+  /**
+   * @function handleBackdropClick
+   * @returns {void}
+   * @description Handle backdrop click
+   */
   const handleBackdropClick = (e: any) => {
     if (e.target === e.currentTarget) {
       handleClose();
     }
   };
 
+  /**
+   * @function isProjectClickable
+   * @returns {boolean}
+   * @description Check if project is clickable
+   */
   const isProjectClickable = (project: ProjectType) => {
     return project.description || project.sourceCode || project.liveLink;
   };

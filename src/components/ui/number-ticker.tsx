@@ -27,6 +27,9 @@ const TickerBoxInternal = ({
 
   const spring = useSpring(0, { stiffness: 30, damping: 15 });
 
+  /**
+   * @description Effect to counter with spring
+   */
   useEffect(() => {
     spring.set(number);
     spring.onChange((value) => setCount(Math.round(value)));

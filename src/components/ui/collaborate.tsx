@@ -3,20 +3,26 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 
 import { motion } from "framer-motion";
-import { FaLinkedin, } from "react-icons/fa";
-import {
-  HiChatBubbleOvalLeftEllipsis,
-  HiSparkles,
-} from "react-icons/hi2";
+import { FaLinkedin } from "react-icons/fa";
+import { HiChatBubbleOvalLeftEllipsis, HiSparkles } from "react-icons/hi2";
 
 const CollaborateInternal = () => {
+  /**
+   * @function handleWhatsappMessage
+   * @returns {void}
+   * @description Open whatsapp message in new tab
+   */
   const handleWhatsappMessage = () => {
     const phoneNumber = "+94705143504"; // Replace with the desired phone number
     // const message = 'Hello!'; // Optional: Add a default message
     const whatsappURL = `https://wa.me/${phoneNumber}`; //?text=${encodeURIComponent(message)}
     window.open(whatsappURL, "_blank");
   };
-
+  /**
+   * @function handleLinkedInProfile
+   * @returns {void}
+   * @description Open linkedin profile in new tab
+   */
   const handleLinkedInProfile = () => {
     const linkedInUrl = `https://www.linkedin.com/in/parakrama-thennakoon-msbwtm`; //linkedIn url
     window.open(linkedInUrl, "_blank");

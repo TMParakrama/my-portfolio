@@ -107,6 +107,9 @@ const ProofWorkInternal = () => {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
 
+  /**
+   * @description Variants for the first container
+   */
   const variants1 = {
     animate: {
       x: [0, "calc(-50% - 1rem)"],
@@ -121,6 +124,9 @@ const ProofWorkInternal = () => {
     },
   };
 
+  /**
+   * @description Variants for the second container
+   */
   const variants2 = {
     animate: {
       x: ["calc(-50% - 1rem)", 0],
@@ -135,8 +141,18 @@ const ProofWorkInternal = () => {
     },
   };
 
+  /**
+   * @function handleClose
+   * @returns {void}
+   * @description Handle close
+   */
   const handleClose = () => setSelectedProject(null);
 
+  /**
+   * @function handleBackdropClick
+   * @returns {void}
+   * @description Handle backdrop click
+   */
   const handleBackdropClick = (e: any) => {
     if (e.target === e.currentTarget) {
       handleClose();

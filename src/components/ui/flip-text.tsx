@@ -19,6 +19,9 @@ const FlipTextAnimationInternal = ({ words }: FlipTextAnimationProps) => {
     "tw-text-teal-500",
   ];
 
+  /**
+   * @description Effect to set the interval
+   */
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentStep((prevStep) => (prevStep + 1) % words.length);

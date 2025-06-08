@@ -308,6 +308,9 @@ const TechStackInternal = () => {
   const [visibleTechIndices, setVisibleTechIndices] = useState([0, 1]);
   const [visibleLangIndices, setVisibleLangIndices] = useState([0, 1]);
 
+  /**
+   * @description Effect to set the interval
+   */
   useEffect(() => {
     const techInterval = setInterval(() => {
       visibleTechIndices.forEach((_, rowIndex) => {
@@ -341,6 +344,9 @@ const TechStackInternal = () => {
     };
   }, [visibleTechIndices, visibleLangIndices]);
 
+  /**
+   * @description Variants for the animation
+   */
   const variants = {
     enter: {
       x: "100%",

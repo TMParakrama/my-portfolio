@@ -55,6 +55,9 @@ const SkillsInternal = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
+  /**
+   * @description Effect to animate the skills
+   */
   useEffect(() => {
     if (!isHovered) {
       controls.start({
@@ -71,6 +74,11 @@ const SkillsInternal = () => {
     }
   }, [controls, scrollPosition, isHovered]);
 
+  /**
+   * @function handleHoverStart
+   * @returns {void}
+   * @description Handle hover start
+   */
   const handleHoverStart = () => {
     setIsHovered(true);
     controls.stop();
@@ -89,7 +97,11 @@ const SkillsInternal = () => {
       }
     }
   };
-
+  /**
+   * @function handleHoverEnd
+   * @returns {void}
+   * @description Handle hover end
+   */
   const handleHoverEnd = () => {
     if (containerRef.current) {
       const transform = window.getComputedStyle(containerRef.current).transform;

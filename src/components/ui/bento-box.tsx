@@ -21,6 +21,9 @@ import { Skills } from "./skills";
 export const BentoBox = component$(() => {
   const isExtraLargeScreen = useSignal(true);
 
+  /**
+   * @description Handle window large screen
+   */
   const handleWindowLargeScreen = $(() => {
     if (isBrowser) {
       console.log(window.innerWidth);

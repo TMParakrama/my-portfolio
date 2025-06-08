@@ -85,6 +85,11 @@ const ProfileBoxInternal = () => {
   //   },
   // });
 
+  /**
+   * @function handleSendEmail
+   * @returns {void}
+   * @description Handle send email
+   */
   const handleSendEmail = () => {
     const email = "t.m.parakrama@gmail.com";
     const subject = "<---Your Subject--->";

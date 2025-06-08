@@ -285,6 +285,9 @@ const TechLogoStackInternal = ({ logos }: TechLogoStackProps) => {
 
   const techStackLogos = logos || logosData;
 
+  /**
+   * @description Effect to change the logo
+   */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogoIndex(

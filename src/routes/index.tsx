@@ -5,6 +5,9 @@ import { BentoBox } from "~/components/ui/bento-box";
 export default component$(() => {
   const isLoaded = useSignal(false);
 
+  /**
+   * @description Window ready state change effect to set the isLoaded state
+   */
   useOnWindow(
     "readystatechange",
     $(() => {
