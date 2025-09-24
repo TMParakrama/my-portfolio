@@ -3,8 +3,8 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 
 import { motion } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa";
-import { HiChatBubbleOvalLeftEllipsis, HiSparkles } from "react-icons/hi2";
+import { FaLinkedin, FaHandshake } from "react-icons/fa";
+import { HiChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 
 const CollaborateInternal = () => {
   /**
@@ -31,7 +31,7 @@ const CollaborateInternal = () => {
   return (
     <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-full tw-p-4 tw-px-4 sm:tw-px-10">
       <div className="tw-w-16 tw-h-16 tw-rounded-full tw-bg-[#28292b] tw-border tw-border-gray-600 tw-flex tw-items-center tw-justify-center tw-mb-4">
-        <HiSparkles className="tw-w-8 tw-h-8 tw-text-purple-600" />
+        <FaHandshake className="tw-w-8 tw-h-8 tw-text-purple-600" />
       </div>
       <h2 className="tw-text-2xl tw-text-white tw-mb-2">
         Let&apos;s Work Together
@@ -40,7 +40,7 @@ const CollaborateInternal = () => {
         Let&apos;s transform your ideas into reality for your projects
       </h3>
       <motion.button
-        className="tw-w-full tw-bg-[#28292b] tw-border tw-border-gray-600 tw-text-white tw-py-3 tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-mb-3 tw-relative tw-overflow-hidden"
+        className="tw-w-full tw-bg-[#28292b] tw-border tw-border-gray-800 tw-text-white tw-py-3 tw-rounded-xl nded-lg tw-flex tw-items-center tw-justify-center tw-mb-3 tw-relative tw-overflow-hidden"
         whileHover="hover"
         onClick={handleWhatsappMessage}
       >
@@ -62,7 +62,7 @@ const CollaborateInternal = () => {
         </span>
       </motion.button>
       <motion.button
-        className="tw-w-full tw-bg-[#28292b] tw-border tw-border-gray-600 tw-text-white tw-py-3 tw-rounded-lg tw-flex tw-items-center tw-justify-center tw-relative tw-overflow-hidden"
+        className="tw-w-full tw-bg-[#28292b] tw-border tw-border-gray-800 tw-text-white tw-py-3 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-relative tw-overflow-hidden"
         whileHover="hover"
         onClick={handleLinkedInProfile}
       >
