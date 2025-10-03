@@ -1,150 +1,134 @@
-import {
-  component$,
-  useSignal,
-  useOnWindow,
-  $,
-  useTask$,
-} from "@builder.io/qwik";
-import { useLocation, server$ } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
+import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 
 import { DocPage } from "~/components/ui/doc-page";
-import ProjectData from "$/public/mockData/ProjectDoc.json";
+import ProjectData from "~/data/project-docs.json";
 
 interface ProjectDetail {
   title: string;
   description?: string;
 }
 
-// Using type assertion to fix TypeScript error where docId cannot be used as an index
-// Since we know ProjectData only contains valid project IDs as keys
-const getDocData = server$(function (docId: string) {
-  const data: ProjectDetail = ProjectData[docId as keyof typeof ProjectData];
+export const useDocData = routeLoader$<ProjectDetail | null>(({ params, status }) => {
+  const docId = params.id;
+  const data = (ProjectData as Record<string, ProjectDetail>)[
+    docId as keyof typeof ProjectData
+  ];
+  if (!data) {
+    status(404);
+    return null;
+  }
   return data;
 });
+
+export const head: DocumentHead = ({ resolveValue, url }) => {
+  const data = resolveValue(useDocData);
+  const baseTitle = "Docs";
+  const title = data?.title ? `${data.title} | ${baseTitle}` : `Not Found | ${baseTitle}`;
+  const description = data?.description ?? "Project documentation not found.";
+
+  return {
+    title,
+    meta: [
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: url.href },
+      { name: "twitter:card", content: "summary" },
+    ],
+    links: [{ rel: "canonical", href: url.href }],
+  };
+};
 
 /**
  * Qwik Docs page route component. Fetches and displays project documentation based on the dynamic route param.
  */
 export default component$(() => {
-  const loc = useLocation();
-  const isLoaded = useSignal(false);
+  const projectDoc = useDocData();
 
-  // Signal to hold the project documentation data
-  const projectDoc = useSignal<ProjectDetail | null>(null);
-
-  // Fetch the document data when the route param changes
-  useTask$(async ({ track }) => {
-    const documentId = track(() => loc.params.id);
-    if (documentId) {
-      // getDocData is a server$ function
-      const data = await getDocData(documentId);
-      projectDoc.value = data;
-    }
-  });
-
-  useOnWindow(
-    "readystatechange",
-    $(() => {
-      isLoaded.value = true;
-    })
-  );
+  if (!projectDoc.value) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "60vh",
+          flexDirection: "column",
+          gap: "1rem",
+        }}
+      >
+        <div style={{ color: "#fff", fontSize: "1.2rem" }}>Document not found.</div>
+        <a
+          href="/"
+          style={{
+            color: "#60a5fa",
+            textDecoration: "underline",
+            fontWeight: 500,
+          }}
+          aria-label="Back to Home"
+        >
+          ← Back to Home
+        </a>
+      </div>
+    );
+  }
 
   return (
-    <>
-      {!isLoaded.value || !projectDoc.value ? (
-        <div
+    <div>
+      {/* Breadcrumb Navigation */}
+      <nav
+        aria-label="breadcrumb"
+        style={{
+          marginBottom: "1.5rem",
+          marginTop: "1rem",
+          marginInline: "1rem",
+        }}
+      >
+        <a
+          href="/"
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100vh",
-            flexDirection: "column",
-            gap: "1rem",
+            color: "#60a5fa",
+            textDecoration: "underline",
+            fontWeight: 500,
           }}
         >
-          <div
-            style={{
-              width: "64px",
-              height: "64px",
-              border: "2px solid #fff",
-              borderTopColor: "transparent",
-              borderRadius: "50%",
-              animation: "spin 1s linear infinite",
-            }}
-          />
-          <div
-            style={{
-              color: "#fff",
-              fontSize: "1.2rem",
-            }}
-          >
-            Loading<span style={{ animation: "dots 1.5s infinite" }}>...</span>
-          </div>
-        </div>
-      ) : (
-        <div>
-          {/* Breadcrumb Navigation */}
-          {/**
-           * Breadcrumb navigation for docs page.
-           * Home is a link to the root, and the current project title is shown.
-           */}
-          <nav
-            aria-label="breadcrumb"
-            style={{
-              marginBottom: "1.5rem",
-              marginTop: "1rem",
-              marginInline: "1rem",
-            }}
-          >
-            <a
-              href="/"
-              style={{
-                color: "#60a5fa",
-                textDecoration: "underline",
-                fontWeight: 500,
-              }}
-            >
-              Home
-            </a>
-            <span style={{ color: "#888", margin: "0 0.5rem" }}>/</span>
-            <span style={{ color: "#fff", fontWeight: 500 }}>
-              {projectDoc.value.title}
-            </span>
-          </nav>
+          Home
+        </a>
+        <span style={{ color: "#888", margin: "0 0.5rem" }}>/</span>
+        <span style={{ color: "#fff", fontWeight: 500 }}>
+          {projectDoc.value.title}
+        </span>
+      </nav>
 
-          {/* Back/Home Button */}
-          {/**
-           * Button to navigate back to the home/root page.
-           */}
-          <button
-            type="button"
-            onClick$={() => (window.location.href = "/")}
-            style={{
-              background: "#28292b",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              padding: "0.5rem 1.2rem",
-              marginBottom: "1.5rem",
-              marginInline: "1rem",
-              cursor: "pointer",
-              fontWeight: 500,
-              fontSize: "1rem",
-              transition: "background 0.2s",
-            }}
-            aria-label="Back to Home"
-          >
-            ← Back to Home
-          </button>
+      {/* Back/Home Link */}
+      <a
+        href="/"
+        style={{
+          background: "#28292b",
+          color: "#fff",
+          border: "none",
+          borderRadius: "6px",
+          padding: "0.5rem 1.2rem",
+          marginBottom: "1.5rem",
+          marginInline: "1rem",
+          cursor: "pointer",
+          fontWeight: 500,
+          fontSize: "1rem",
+          display: "inline-block",
+        }}
+        aria-label="Back to Home"
+      >
+        ← Back to Home
+      </a>
 
-          <DocPage
-            data={{
-              title: projectDoc.value.title,
-              description: projectDoc.value.description ?? "",
-            }}
-          />
-        </div>
-      )}
-    </>
+      <DocPage
+        data={{
+          title: projectDoc.value.title,
+          description: projectDoc.value.description ?? "",
+        }}
+      />
+    </div>
   );
 });

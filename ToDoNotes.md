@@ -13,7 +13,7 @@ Prioritized actions (checklist)
 
 Critical (largest wins)
 
-- [ ] Convert docs route to loader
+- [✓] Convert docs route to loader
   - Move public/mockData/ProjectDoc.json → src/data/project-docs.json (importable)
   - Use routeLoader$ to fetch by id; handle not found with status(404)
   - Render with useDocData(); add head for title/description/canonical
