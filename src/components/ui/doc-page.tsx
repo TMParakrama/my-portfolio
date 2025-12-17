@@ -46,7 +46,7 @@ export const DocPage = component$<DocPageProps>(({ data }) => {
                 rel="noopener noreferrer"
                 class="tw-text-blue-400 tw-hover:text-blue-300 tw-transition-colors"
               >
-                Visit Live Site
+                Visit Live Site / App
               </a>
             </div>
           )}

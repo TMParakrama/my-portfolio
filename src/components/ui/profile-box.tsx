@@ -93,7 +93,7 @@ const ProfileBoxInternal = () => {
   const handleSendEmail = () => {
     const email = "t.m.parakrama@gmail.com";
     const subject = "<---Your Subject--->";
-    const body = `Hi Parakrama,\n\nI came across your portfolio and would like to discuss potential opportunities.\n\nBest regards`;
+    const body = `<---Your Message--->`;
 
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
