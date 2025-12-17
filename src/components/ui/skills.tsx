@@ -131,7 +131,7 @@ const SkillsInternal = () => {
       </h2>
       <div className="tw-w-full tw-h-[1px] tw-bg-gray-600 tw-mb-4"></div>
       <div
-        className="tw-overflow-hidden tw-w-full tw-h-64 sm:tw-h-64 md:tw-h-64 xl:tw-h-52 tw-px-2"
+        className="tw-overflow-hidden tw-w-full tw-h-64 sm:tw-h-64 md:tw-h-52 xl:tw-h-52 tw-px-2"
         style={{
           maskImage:
             "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
@@ -141,7 +141,7 @@ const SkillsInternal = () => {
           ref={containerRef}
           animate={controls}
           style={{ width: "100%", display: "flex", flexDirection: "column" }}
-          className="tw-flex tw-flex-col tw-items-center tw-gap-4 tw-justify-center tw-min-w-full"
+          className="tw-flex tw-flex-col tw-items-center tw-gap-4 tw-justify-center tw-min-w-full "
         >
           {rectangles
             .concat(rectangles)
