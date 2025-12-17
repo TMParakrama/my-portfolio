@@ -3,7 +3,7 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import { useRef, useState } from "react";
 import { HiAcademicCap, HiArrowTopRightOnSquare } from "react-icons/hi2";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { HiCode } from "react-icons/hi";
 
 const workExperience = [
@@ -110,16 +110,14 @@ const ProofWorkInternal = () => {
   /**
    * @description Variants for the first container
    */
-  const variants1 = {
+  const variants1: Variants = {
     animate: {
       x: [0, "calc(-50% - 1rem)"],
       transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 20,
-          ease: "linear",
-        },
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 20,
+        ease: "linear",
       },
     },
   };
@@ -127,16 +125,14 @@ const ProofWorkInternal = () => {
   /**
    * @description Variants for the second container
    */
-  const variants2 = {
+  const variants2: Variants = {
     animate: {
       x: ["calc(-50% - 1rem)", 0],
       transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 20,
-          ease: "linear",
-        },
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 20,
+        ease: "linear",
       },
     },
   };
@@ -192,7 +188,7 @@ const ProofWorkInternal = () => {
         <motion.div
           ref={containerRef1}
           variants={variants1}
-          animate={!isHovered1 && "animate"}
+          animate={isHovered1 ? undefined : "animate"}
           style={{ width: "fit-content", display: "flex" }}
           className="tw-flex tw-justify-center tw-items-center tw-gap-5 tw-bg-transparent"
           onMouseEnter={() => setIsHovered1(true)}
@@ -226,7 +222,7 @@ const ProofWorkInternal = () => {
         <motion.div
           ref={containerRef2}
           variants={variants2}
-          animate={!isHovered2 && "animate"}
+          animate={isHovered2 ? undefined : "animate"}
           style={{ width: "fit-content", display: "flex" }}
           className="tw-flex tw-justify-center tw-gap-5 tw-bg-transparent"
           onMouseEnter={() => setIsHovered2(true)}

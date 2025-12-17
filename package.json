@@ -48,6 +48,7 @@
     "@typescript-eslint/parser": "7.16.1",
     "@vitest/ui": "^0.34.6",
     "autoprefixer": "^10.4.20",
+    "baseline-browser-mapping": "^2.9.8",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.12.0",
     "netlify-cli": "^15.0.0",
@@ -65,7 +66,7 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001747",
+    "caniuse-lite": "^1.0.30001760",
     "framer-motion": "^12.23.26",
     "ogl": "^1.0.11",
     "react-icons": "^5.5.0"
