@@ -72,7 +72,7 @@
     "react-icons": "^5.5.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.53.3",
+    "@rollup/rollup-linux-x64-gnu": "^4.54.0",
     "sharp": "^0.33.5"
   }
 }
